@@ -23,6 +23,12 @@ spec:
       containers:
       - name:  nestjsapi
         image: deep1024/nestapi:latest
+        env:
+          - name: DATABASE_URL
+            valueFrom:
+              secretKeyRef:
+                name: database
+                key: database_url
         ports:
         - containerPort:  3000
           name:  nestjsapi
