@@ -6,7 +6,7 @@ jobs:
     steps:
       - name: Get current date and time
         id: date
-        run: echo "::set-output name=date::$(date +'%Y-%m-%d %h:%i:%s')"
+        run: echo "::set-output name=date::$(date)"
       - name: Check out repository code
         uses: actions/checkout@v3
       - name: Set up QEMU

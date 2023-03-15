@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  nestjsapi
+  namespace: default
+  labels:
+    app:  nestjsapi
+spec:
+  selector:
+    matchLabels:
+      app: nestjsapi
+  replicas: 1
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app:  nestjsapi
+    spec:
+      containers:
+      - name:  nestjsapi
+        image: deep1024/nestapi:latest
+        ports:
+        - containerPort:  3000
+          name:  nestjsapi
+        volumeMounts:
+        - name: localtime
+          mountPath: /etc/localtime
+      restartPolicy: Always
