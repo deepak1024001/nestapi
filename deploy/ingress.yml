@@ -16,5 +16,5 @@ spec:
           service:
             name: nestjsapiservice
             port:
-              number: 80
+              number: 3100
               
