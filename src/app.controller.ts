@@ -18,6 +18,6 @@ export class AppController {
   @Get('build')
   getBuild() {
     console.log(process.env)
-    return `Build Time: ${process.env.BUILD_TIME} Commit Hash: ${process.env.HASH} Version: ${process.env.VERSION}`;
+    return `Build Time: ${process.env.BUILD_TIME} Commit Hash: ${process.env.HASH} Version: ${process.env.VERSION}`; 
   }
 }
