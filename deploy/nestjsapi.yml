@@ -26,7 +26,4 @@ spec:
         ports:
         - containerPort:  3000
           name:  nestjsapi
-        volumeMounts:
-        - name: localtime
-          mountPath: /etc/localtime
       restartPolicy: Always
