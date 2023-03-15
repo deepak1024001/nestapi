@@ -25,7 +25,7 @@ spec:
         image: deep1024/nestapi:latest
         env:
           - name: DATABASE_URL
-            value: "mysql://root:nestapi@123@localhost:8081/nestapi?schema=public"
+            value: "mysql://root:nestapi@123@mysql:3306/nestapi?schema=public"
         ports:
         - containerPort:  3000
           name:  nestjsapi
