@@ -5,6 +5,8 @@ kind: Ingress
 metadata:
   name: nestjsapiingress
   namespace: default
+  annotations:
+    nginx.ingress.kubernetes.io/ssl-redirect: \"false\"
 spec:
   ingressClassName: nginx
   rules:
