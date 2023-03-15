@@ -6,6 +6,7 @@ metadata:
   name: nestjsapiingress
   namespace: default
 spec:
+  ingressClassName: nginx
   rules:
   - host: nestjsapi.loc
     http:
