@@ -6,8 +6,7 @@ metadata:
   name: nestjsapiingress
   namespace: default
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
-    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    cert-manager.io/cluster-issuer: selfsigned-issuer 
 spec:
   ingressClassName: nginx
   rules:
@@ -21,4 +20,8 @@ spec:
             name: nestjsapiservice
             port:
               number: 3000
+  tls: 
+  - hosts: 
+    - nestjsapi.loc 
+    secretName: nestjsapi-cert-tls
               
