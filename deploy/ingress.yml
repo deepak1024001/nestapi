@@ -5,10 +5,8 @@ kind: Ingress
 metadata:
   name: nestjsapiingress
   namespace: default
-  annotations:
-    cert-manager.io/cluster-issuer: selfsigned-issuer 
 spec:
-  ingressClassName: nginx
+  ingressClassName: traefik
   rules:
   - host: nestjsapi.loc
     http:
@@ -20,8 +18,4 @@ spec:
             name: nestjsapiservice
             port:
               number: 3000
-  tls: 
-  - hosts: 
-    - nestjsapi.loc 
-    secretName: nestjsapi-cert-tls
               
