@@ -32,7 +32,7 @@ jobs:
         run: |
           git config user.name = "Github Action Bot"
           git config user.email = "<>"
-          set -i '/image/c\image: deep1024/nestapi:${{github.sha}}' deploy/nestjsapi.yml
+          sed -i '/image/c\image: deep1024/nestapi:${{github.sha}}' deploy/nestjsapi.yml
           git add deploy/nestjsapi.yml
           git push origin main
 
