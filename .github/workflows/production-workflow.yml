@@ -34,8 +34,10 @@ jobs:
         run: |
           cd deploy
           kustomize edit set image deep1024/nestapi:${{github.sha}}
-          cat nestjsapi.yml
+          cat kustomization.yaml
+          git config user.name="Github Action Bot"
+          git config user.email="<>"
           git add .
-          git commit -m "Image nage change"
+          git commit -m "Image name change"
           git push
 
