@@ -8,4 +8,4 @@ patchesStrategicMerge:
 images:
 - name: nestjsapi
   newName: deep1024/nestapi
-  newTag: githubsha
+  newTag: 13c63890724b8b0425528a67506c338cc15c265e
