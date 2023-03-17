@@ -27,13 +27,13 @@ jobs:
             BUILD_TIME=${{ steps.date.outputs.date }}
             HASH=${{github.sha}}
             VERSION=1.0.0
-          tags: deep1024/nestapi:latest
+          tags: deep1024/nestapi:${{github.sha}}
       - name: Setup Kustomize
         uses: imranismail/setup-kustomize@v2
       - name: Update deployment descriptors with the latest build container version
         run: |
           cd deploy
-          kustomize edit set image nestjsapi=deep1024/nestapi:${{github.sha}}
+          kustomize edit set image nestapi=deep1024/nestapi:${{github.sha}}
           cat kustomization.yaml
           git config user.name "Github Action Bot"
           git config user.email "<>"

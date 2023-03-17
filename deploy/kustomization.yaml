@@ -6,6 +6,6 @@ patchesStrategicMerge:
 
 
 images:
-- name: nestjsapi
+- name: nestapi
   newName: deep1024/nestapi
   newTag: githubsha
