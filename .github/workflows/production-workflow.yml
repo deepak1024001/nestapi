@@ -34,7 +34,7 @@ jobs:
         run: |
           cd deploy
           kustomize edit set image deep1024/nestapi:${{github.sha}}
-          cat deploy/nestjsapi.yml
+          cat nestjsapi.yml
           git add .
           git commit -m "Image nage change"
           git push
