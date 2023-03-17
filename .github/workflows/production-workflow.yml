@@ -33,10 +33,10 @@ jobs:
       - name: Update deployment descriptors with the latest build container version
         run: |
           cd deploy
-          kustomize edit set image deep1024/nestapi:${{github.sha}}
+          kustomize edit set image nestjsapi=deep1024/nestapi:${{github.sha}}
           cat kustomization.yaml
-          git config user.name="Github Action Bot"
-          git config user.email="<>"
+          git config user.name "Github Action Bot"
+          git config user.email "<>"
           git add .
           git commit -m "Image name change"
           git push
