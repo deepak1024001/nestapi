@@ -4,9 +4,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: nestjsapiingress
-  namespace: default
-  annotations:
-    cert-manager.io/cluster-issuer: selfsigned-issuer 
+  namespace: default 
 spec:
   ingressClassName: traefik
   rules:
@@ -23,5 +21,5 @@ spec:
   tls: 
   - hosts: 
     - nestjsapi.loc 
-    secretName: nestjsapi-cert-tls
+    secretName: nestjsapi-tls
               

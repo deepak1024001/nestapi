@@ -40,3 +40,4 @@ deploy/cert-manager.crds.yaml
 deploy/cert-manager.yml
 deploy/argocd-traefic.yml
 deploy/argocd-configmap.yml
+crt
