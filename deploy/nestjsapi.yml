@@ -1,10 +1,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name:  nestjsapi
+  name: nestjsapi
   namespace: default
   labels:
-    app:  nestjsapi
+    app: nestjsapi
 spec:
   selector:
     matchLabels:
@@ -18,15 +18,22 @@ spec:
   template:
     metadata:
       labels:
-        app:  nestjsapi
+        app: nestjsapi
     spec:
       containers:
-      - name:  nestjsapi
-        image: deep1024/nestapi:e3b9c2da147f61068eaebd6189458e46db4d32d2
-        env:
-          - name: DATABASE_URL
-            value: "mysql://root:nestapi@123@mysql:3306/nestapi?schema=public"
-        ports:
-        - containerPort:  3000
-          name:  nestjsapi
+        - name: nestjsapi
+          image: deep1024/nestapi:e3b9c2da147f61068eaebd6189458e46db4d32d2
+          env:
+            - name: DATABASE_URL
+              value: "mysql://root:nestapi@123@mysql:3306/nestapi?schema=public"
+          ports:
+            - containerPort: 3000
+              name: nestjsapi
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "250m"
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
       restartPolicy: Always
