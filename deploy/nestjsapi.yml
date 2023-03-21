@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
       - name:  nestjsapi
-        image: deep1024/nestapi:e368d8e352edf3ff3c4c05d8650a76b92ff7aecd
+        image: deep1024/nestapi:6f0676c235d5622d391422df3ca4794a47418839
         env:
           - name: DATABASE_URL
             value: "mysql://root:nestapi@123@mysql:3306/nestapi?schema=public"
