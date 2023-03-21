@@ -31,7 +31,7 @@ jobs:
       - name: Update deployment descriptors with the latest build container version
         run: |
           cd deploy
-          sed -i '/image/c\        image: deep1024/nestapi:${{github.sha}}' nestjsapi.yml
+          sed -i '/image/c\           image: deep1024/nestapi:${{github.sha}}' nestjsapi.yml
           git config user.name "Github Action Bot"
           git config user.email "<>"
           git add .
