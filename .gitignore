@@ -41,3 +41,4 @@ deploy/cert-manager.yml
 deploy/argocd-traefic.yml
 deploy/argocd-configmap.yml
 crt
+deploy/metrics-server.yml 
